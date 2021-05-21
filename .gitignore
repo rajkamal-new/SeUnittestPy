@@ -1,0 +1,7 @@
+.idea/
+*.html
+venv/
+target/
+__pycache__/
+*.py[cod]
+*$py.class
