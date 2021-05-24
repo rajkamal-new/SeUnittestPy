@@ -22,8 +22,16 @@ class Page:
 
             raise e
 
+    def _wait_until_element_is_clickable(self, locator):
+        wait = WebDriverWait(self.driver, 10)
+        try:
+            return wait.until(ec.element_to_be_clickable(locator))
+        except TimeoutException as e:
+
+            raise e
+
     def _click(self, locator):
-        self._find_element(locator).click()
+        self._wait_until_element_is_clickable(locator).click()
 
     def _input_text(self, locator, text):
         self._find_element(locator).send_keys(text)
