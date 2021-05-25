@@ -1,1 +1,3 @@
-print("hello")
+printy("hello")
+
+print("remote")
