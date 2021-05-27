@@ -21,7 +21,7 @@ class TestHeader(unittest.TestCase):
     def test_signout(self):
         self.header = Header(self.driver)
         self.header.logout()
-        self.assertEqual(LoginPage(self.driver).get_title(), "LOGIN Panel")
+        self.assertTrue(LoginPage(self.driver).get_title(), "LOGIN Panel")
 
 
 if __name__ == '__main__':

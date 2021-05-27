@@ -11,11 +11,16 @@ from utils.csv_reader import get_csv_data
 @ddt
 class TestLoginPage(unittest.TestCase):
 
-    def setUp(self):
-        self.driver = driver_init()
+    @classmethod
+    def setUpClass(cls):
+        cls.driver = driver_init()
 
-    def tearDown(self):
-        self.driver.quit()
+    @classmethod
+    def tearDownClass(cls):
+        cls.driver.quit()
+
+    def setUp(self):
+        self.driver.delete_all_cookies()
 
 
     def test_1_login_success(self):
